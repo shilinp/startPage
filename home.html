@@ -1,92 +1,59 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>
-.row {
-    min-height: 300px;
-    position: relative;
-  text-align: center;
-}
-
-.column_center {
-  display: inline-block;
-  padding: 0%;
-  padding-top: 25%;
-  width: 100%;
-  border:0px solid black;
-}
-
-input {
-  width: 100%;
-  height: 50px;
-  display: block;
-  font-size:24px;
-  color: white;
-  background-color: black;
-  font-family: monospace;
-  text-align: center;
-}
-
-body {
-    background-color: black;
-}
-
-h6 {
-  color: white;
-}
-
-textarea:focus, input:focus{
-    outline: none;
-}
-
-</style>
+<link rel="stylesheet" type="text/css" href="home.css">
 </head>
+
 <body>
 
-    <div class="row">
-      <form class="column_center" action="javascript:test();">
-        <input type="text" name="input" autofocus="autofocus" id="userInput" onkeypress="if (event.keyCode==13){document.getElementById('button').click();}">
-        <input type="submit" value="Google Search" style="visibility:hidden;">
-      </form>
-    </div>
+    <form class="column_center" action="javascript:test();">
+      <input type="text" name="input" autofocus="autofocus" id="userInput" onkeypress="if (event.keyCode==13){document.getElementById('button').click();}">
+      <input type="submit" value="Google Search" style="visibility:hidden;">
+    </form>
 
     <script>
 
     function test()
     {
-        var userInput = document.getElementById("userInput").value;
-          if (userInput.charAt(0) == "g"){
-            window.location.href = 'http://www.google.com';
-          }
-          else if (userInput.charAt(0) == "f"){
-            window.location.href = 'http://www.facebook.com';
-          }
-          else if (userInput.charAt(0) == "r"){
-            if (userInput.charAt(1)=="/")
-            {
-              var subreddit = userInput.substr(userInput.indexOf("/")+1)
-              var reddit = "https://www.reddit.com/r/"
-              var rsite = reddit.concat(subreddit);
-              window.location.href = rsite;
-            }
-            else {
-              window.location.href = 'http://www.reddit.com';
-            }
-          }
-          else if (userInput.charAt(0) == "4"){
-            window.location.href = 'http://www.4chan.org';
-          }
-          else if (userInput.charAt(0) == "t"){
-            window.location.href = 'http://www.twitter.com';
-          }
-          else if (userInput.charAt(0) == "y"){
-            window.location.href = 'http://www.youtube.com';
+      var userInput = document.getElementById("userInput").value;
+      if (userInput.length == 1 || userInput.charAt(1) == "/")
+      {
+        if (userInput.charAt(0) == "g"){
+          window.location.href = 'http://www.google.com';
+        }
+        else if (userInput.charAt(0) == "4"){
+          window.location.href = 'http://www.4chan.org';
+        }
+        else if (userInput.charAt(0) == "t"){
+          window.location.href = 'http://www.twitter.com';
+        }
+        else if (userInput.charAt(0) == "y"){
+          window.location.href = 'http://www.youtube.com';
+        }
+        else if (userInput.charAt(0) == "s"){
+          window.location.href = 'http://www.soundcloud.com'
+        }
+        else if (userInput.charAt(0) == "f"){
+          window.location.href = 'http://www.facebook.com';
+        }
+        else if (userInput.charAt(0) == "r"){
+          if (userInput.charAt(1)=="/"){
+            var subreddit = userInput.substr(userInput.indexOf("/")+1)
+            var reddit = "https://www.reddit.com/r/"
+            var rsite = reddit.concat(subreddit);
+            window.location.href = rsite;
           }
           else {
-            var google = "https://www.google.com/search?q=";
-            var search = google.concat(userInput);
-            window.location.href = search;
+            window.location.href = 'http://www.reddit.com';
           }
+        }
+      }
+      else {
+        var google = "https://www.google.com/search?q=";
+        var search = google.concat(userInput);
+        window.location.href = search;
+      }
     }
 
     </script>
