@@ -21,10 +21,6 @@ body {
   background-color: black;
 }
 
-h6 {
-  color: white;
-}
-
 textarea:focus, input:focus{
   outline: none;
 }

@@ -7,7 +7,26 @@ function test()
       window.location.href = 'http://www.google.com';
     }
     else if (userInput.charAt(0) == "4"){
-      window.location.href = 'http://www.4chan.org';
+      if (userInput.charAt(1)==" "){
+        var board = userInput.substr(userInput.indexOf(" ")+1)
+        var chan= "http://boards.4chan.org/";
+        var csite = chan.concat(board);
+        window.location.href = csite;
+      }
+      else{
+        window.location.href = 'http://www.4chan.org';
+      }
+    }
+    else if (userInput.charAt(0) == "u"){
+      if (userInput.charAt(1)==" "){
+        var dict = userInput.substr(userInput.indexOf(" ")+1)
+        var urban= "http://www.urbandictionary.com/define.php?term=";
+        var usite = urban.concat(dict);
+        window.location.href = usite;
+      }
+      else {
+        window.location.href = 'http://www.urbandictionary.com';
+      }
     }
     else if (userInput.charAt(0) == "t"){
       if (userInput.charAt(1)==" "){
@@ -63,6 +82,11 @@ function test()
       else {
         window.location.href = 'http://www.reddit.com';
       }
+    }
+    else {
+      var google = "https://www.google.com/search?q=";
+      var search = google.concat(userInput);
+      window.location.href = search;
     }
   }
   else {
