@@ -1,0 +1,132 @@
+#oneForm input {
+  width: 500px;
+  height: 50px;
+  display: block;
+  font-size:24px;
+  color: white;
+  background-color: rgb(30,30,30);
+  font-family: sans-serif;;
+  text-align: center;
+
+  border-width: thick;
+  border-top:none;
+  border-right:none;
+  border-left:none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 50px 0 rgba(0, 0, 0, 0.8);
+  border-bottom-style: solid;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
+}
+
+#dateTXT {
+  font-family: sans-serif;
+  font-weight:100;
+  color: white;
+  z-index: 100;
+  font-size: 60px;
+  position: absolute;
+  left:50%;
+  top:10%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(30,30,30);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 50px 0 rgba(0, 0, 0, 0.8);
+}
+
+body {
+  background: no-repeat fixed center;
+  background-size: cover;
+}
+
+table {
+  display: block;
+  font-size: 8px;
+  line-height: 5px;
+}
+
+.slideDiv {
+  width: 280px;
+  padding: 10px;
+  border-width: thin;
+  border-top:none;
+  border-right:none;
+  border-left:none;
+  border-bottom-style: solid;
+  border-color: grey;
+
+  font-size:14px;
+  color: white;
+  font-family: monospace;
+  line-height: 200%;
+}
+
+.slideButton {
+  width: 100px;
+}
+
+#toggleText {
+  width: 300px;
+  height: 100%;
+  background-color: rgb(30,30,30);
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  overflow: auto;
+}
+
+#displayText {
+  position: relative;
+}
+
+#bg {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Preserve aspet ratio */
+  width: auto !important;
+  min-height: auto !important;
+  z-index: -1;
+
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+textarea:focus, input:focus{
+  outline: none;
+}
+
+#hamburger{
+  background:none;
+  position:absolute;
+  top:0;
+  left:0;
+  line-height:45px;
+  padding:0px 15px 0px 15px;
+  color:#fff;
+  border:0;
+  font-size:1.4em;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:1;
+}
+#hamburger:hover{
+  color: rgb(30,30,30);
+
+}

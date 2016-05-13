@@ -2,16 +2,67 @@
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="home.css">
-<script src="home.js"></script>
+  <link id="pagestyle" rel="stylesheet" type="text/css" href="Assets/style.css">
+  <link rel="stylesheet" type="text/css" href="Assets/animate.css">
 </head>
 
-<body>
+<body onload="loadBack(); startTime(); defaults();">
+  <script type="text/javascript" src="Assets/functional.js"></script>
+  <script src="Assets/jscolor.js"></script>
 
-    <form class="column_center" action="javascript:test();">
-      <input type="text" autofocus="autofocus" id="userInput" placeholder="> ">
-      <input type="submit" style="visibility:hidden;">
+  <form name="loginBox" id="oneForm" action="javascript:search();">
+      <input type="text" name="input" autofocus="autofocus" id="userInput" /><br/>
+      <input type="submit" style="visibility:hidden" hidefocus="true" />
+  </form>
+
+
+  <button id="hamburger" onclick="toggle();">&#9776; </button>
+
+  <div id="toggleText" class="animated slideInLeft" style="display: none">
+
+    <form class="slideDiv" align="center">
+      Background URL:
+      <input type="text" id="bgchanger" placeholder="Background URL" /><br>
+      <input type="button" class="slideButton" onclick="changebackground();" value="Change" />
     </form>
+
+    <div class="slideDiv" align="center">
+      Accent Color:<br>
+      <input class="jscolor {onFineChange:'update(this)'}" value="cc66ff">
+    </div>
+
+    <form class="slideDiv" align="center">
+      Shortcuts:<br>
+      <input type="text" id="character_enter" placeholder="Add a character command" maxlength="1" /><br>
+      <input type="text" id="url_enter" placeholder="Add a url" /><br>
+      <input type="text" id="search_enter" placeholder="Add the search query url" /><br>
+      <input type="button" class="slideButton" onclick="javascript:store();" value="Set new Macro" />
+    </form>
+
+    <div class="slideDiv" align="center">
+      Storage Options:<br>
+      <input type="button" class="slideButton" onclick="javascript:clearSites();" value="Clear All Macros" />
+      <input type="button" class="slideButton" onclick="clearStorage();" value="Clear All Storage"/>
+    </div>
+
+    <form class="slideDiv" align="center">
+      Clear Macro:<br>
+      <input type="text" id="clear_one" placeholder="Clear the shortcut at #" maxlength = "2" /><br>
+      <input type="button" class="slideButton" onclick="javascript:clearIndividual();" value="Clear" />
+    </form>
+
+    <div class="slideDiv" align="center">
+      List of Macros:<br>
+      <table>
+
+        <script language="javascript" type="text/javascript">
+          updateMacroTable();
+        </script>
+
+      </table>
+    </div>
+
+  </div>
 
 </body>
 </html>
