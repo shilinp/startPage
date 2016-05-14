@@ -9,7 +9,7 @@ function defaults() {
     array.push(["4", "https://www.4chan.org", "https://www.4chan.org/"]);
     array.push(["w", "https://www.wolframalpha.com", "https://www.wolframalpha.com/input/?i="]);
     array.push(["s", "https://soundcloud.com", "https://soundcloud.com/search?q="]);
-    array.push(["tu", "https://www.tumblr.com", "https://www.tumblr.com/search/"]);
+    array.push(["tr", "https://www.tumblr.com", "https://www.tumblr.com/search/"]);
     localStorage.setItem("array", JSON.stringify(array));
   }
 }

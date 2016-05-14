@@ -5,7 +5,7 @@
   font-size:24px;
   color: white;
   background-color: rgb(30,30,30);
-  font-family: sans-serif;;
+  font-family: sans-serif;
   text-align: center;
 
   border-width: thick;
@@ -136,7 +136,8 @@ tr td.macroURL {
   left: 0%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
   z-index: 2;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 #displayText {
