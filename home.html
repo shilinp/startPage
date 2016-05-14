@@ -20,20 +20,26 @@
 
   <div id="toggleText" class="animated slideInLeft" style="display: none">
 
+    <div class="introText">
+      Welcome to <mark class="red">StartPage</mark>. Use this site to quickly navigate external search queries.
+      Access macros by typing "-" before the macro identifier. <br><br> Example: <mark class="yellow">-y hello</mark><br><br>
+      This searches YouTube for hello.<br>
+    </div>
+
     <form class="slideDiv" align="center">
-      Background URL:
+      Background URL:<br>
       <input type="text" id="bgchanger" placeholder="Background URL" /><br>
       <input type="button" class="slideButton" onclick="changebackground();" value="Change" />
     </form>
 
     <div class="slideDiv" align="center">
       Accent Color:<br>
-      <input class="jscolor {onFineChange:'update(this)'}" value="cc66ff">
+      <input class="jscolor {onFineChange:'update(this)'}" value="ffffff">
     </div>
 
     <form class="slideDiv" align="center">
       Shortcuts:<br>
-      <input type="text" id="character_enter" placeholder="Add a character command" maxlength="1" /><br>
+      <input type="text" id="character_enter" placeholder="Add a character command" maxlength="2" /><br>
       <input type="text" id="url_enter" placeholder="Add a url" /><br>
       <input type="text" id="search_enter" placeholder="Add the search query url" /><br>
       <input type="button" class="slideButton" onclick="javascript:store();" value="Set new Macro" />
@@ -47,11 +53,11 @@
 
     <form class="slideDiv" align="center">
       Clear Macro:<br>
-      <input type="text" id="clear_one" placeholder="Clear the shortcut at #" maxlength = "2" /><br>
+      <input type="text" id="clear_one" placeholder="Clear shortcut at #" maxlength = "2" /><br>
       <input type="button" class="slideButton" onclick="javascript:clearIndividual();" value="Clear" />
     </form>
 
-    <div class="slideDiv" align="center">
+    <div class="slideDiv" id="macroTABLE" align="center">
       List of Macros:<br>
       <table>
 

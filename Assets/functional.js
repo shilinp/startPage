@@ -1,27 +1,22 @@
 var array = [];
-function defaults()
-{
-  array.push(["r", "https://www.reddit.com", "https://www.reddit.com/r/"]);
-  array.push(["t", "https://twitter.com", "https://twitter.com/search?q="]);
-  localStorage.setItem("array", JSON.stringify(array));
-}
 
+function defaults() {
+  if (localStorage.getItem("array") === null) {
+    array.push(["g", "https://www.google.com", "https://www.google.com/#q="]);
+    array.push(["r", "https://www.reddit.com", "https://www.reddit.com/r/"]);
+    array.push(["y", "https://www.youtube.com", "https://www.youtube.com/results?search_query="]);
+    array.push(["t", "https://www.twitter.com", "https://www.twitter.com/search?q="]);
+    array.push(["4", "https://www.4chan.org", "https://www.4chan.org/"]);
+    array.push(["w", "https://www.wolframalpha.com", "https://www.wolframalpha.com/input/?i="]);
+    array.push(["s", "https://soundcloud.com", "https://soundcloud.com/search?q="]);
+    array.push(["tu", "https://www.tumblr.com", "https://www.tumblr.com/search/"]);
+    localStorage.setItem("array", JSON.stringify(array));
+  }
+}
 
 /*-=-=-=-=-=-=-=-=-=-=-=-=-=-
 VISUAL DATA
 -=-=-=-=-=-=-=-=-=-=-=-=-=-*/
-
-function updateMacroTable()
-{
-  var temp = JSON.parse(localStorage.getItem("array"));
-  for (i = 0; i < temp.length; i++) {
-    var x = i+1;
-    document.write("<tr><td>" + x + ")" + "</td>")
-    document.write("<td>" + temp[i][0] + "</td>");
-    document.write("<td>" + temp[i][1] + "</td>" )
-    document.write("<td>" + temp[i][2] + "</td></tr>")
-  }
-}
 
 function loadBack() {
   if (localStorage.getItem("backIMG") === null) {
@@ -35,6 +30,18 @@ function loadBack() {
   document.getElementById("bgchanger").placeholder = localStorage.getItem("backIMG");
 }
 
+function updateMacroTable()
+{
+  var temp = JSON.parse(localStorage.getItem("array"));
+  for (i = 0; i < temp.length; i++) {
+    var x = i+1;
+    document.write("<tr><td class = \"macroNumber\">" + x + "</td>")
+    document.write("<td class = \"macroLetter\">" + "-" + temp[i][0] + "</td>");
+    document.write("<td class = \"macroURL\">" + temp[i][1] + "</td>" )
+    document.write("<td class = \"macroURL\">" + temp[i][2] + "</td></tr>")
+  }
+}
+
 function changebackground(){
   var url = document.getElementById('bgchanger').value;
   localStorage.setItem("backIMG", url);
@@ -43,7 +50,7 @@ function changebackground(){
 
 function clearStorage(){
   localStorage.clear();
-  alert("Please refresh.");
+  location.reload(true);
   defaults();
 }
 
@@ -112,7 +119,7 @@ function store() //Stores a website shortcut
   if (bool != 1)
   {
     array.push([charInput, webURL, queryURL]);
-    alert("Please refresh.");
+    location.reload(true);
   }
   else {
     alert("That Macro ID is already taken!")
@@ -124,7 +131,7 @@ function clearSites()
 {
   localStorage.removeItem("array");
   defaults();
-  alert("Please refresh.");
+  location.reload(true);
 }
 
 function clearIndividual()
@@ -145,7 +152,7 @@ function clearIndividual()
     array.push(y[i]);
   }
   localStorage.setItem("array", JSON.stringify(array));
-  alert("Please refresh.");
+  location.reload(true);
 }
 
 
@@ -158,9 +165,19 @@ function find(userInput) //Returns position of array in the array has a characte
 {
   for (i = 0; i < array.length; i++)
   {
-    if (array[i][0] == userInput.charAt(1))
+    if (userInput.charAt(1) != userInput.charAt(array.length-1) && userInput.charAt(2) != " ")
     {
-      return i;
+      if (array[i][0].charAt(0) == userInput.charAt(1) && array[i][0].charAt(1) == userInput.charAt(2))
+      {
+        return i;
+      }
+    }
+    else if(userInput.charAt(1) == userInput.charAt(array.length-1) || userInput.charAt(2) == " ")
+    {
+      if (array[i][0] == userInput.charAt(1))
+      {
+        return i;
+      }
     }
   }
   return -1;
@@ -175,7 +192,7 @@ function search() //Action command to search the internet
     var num = find(userInput);
     if (num != -1)
     {
-      if (userInput.charAt(2) == " "){
+      if (userInput.charAt(2) == " " || userInput.charAt(3) == " "){
         var query = array[num][2];
         var site = query.concat(userInput.substr(userInput.indexOf(" ")+1));
         window.location.href = site;
