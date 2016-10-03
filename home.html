@@ -2,77 +2,95 @@
 <html>
 
 <head>
-  <link id="pagestyle" rel="stylesheet" type="text/css" href="Assets/style.css">
-  <link rel="stylesheet" type="text/css" href="Assets/animate.css">
+    <link id="pagestyle" rel="stylesheet" type="text/css" href="Assets/style.css">
+    <link rel="stylesheet" type="text/css" href="Assets/animate.css">
 </head>
 
 <body onload="loadBack(); startTime();">
-  <script type="text/javascript" src="Assets/functional.js"></script>
-  <script src="Assets/jscolor.js"></script>
+    <script type="text/javascript" src="Assets/functional.js"></script>
+    <script src="Assets/jscolor.js"></script>
 
-  <form name="loginBox" id="oneForm" action="javascript:search();">
-      <input type="text" name="input" autofocus="autofocus" id="userInput" /><br/>
-      <input type="submit" style="visibility:hidden" hidefocus="true" />
-  </form>
-
-
-  <button id="hamburger" onclick="toggle();">&#9776; </button>
-
-  <div id="toggleText" class="animated slideInLeft" style="display: none">
-
-    <div class="introText">
-      Welcome to <mark class="red">StartPage</mark>. Use this site to quickly navigate external search queries.
-      Access macros by typing "-" before the macro identifier. <br><br> Example: <mark class="yellow">-y hello</mark><br><br>
-      This searches YouTube for hello.<br>
-    </div>
-
-    <script language="javascript" type="text/javascript">
-      defaults();
-    </script>
-
-    <form class="slideDiv" align="center">
-      Background URL:<br>
-      <input type="text" id="bgchanger" placeholder="Background URL" /><br>
-      <input type="button" class="slideButton" onclick="changebackground();" value="Change" />
+    <form name="loginBox" id="oneForm" action="javascript:search();">
+        <input type="text" name="input" autofocus="autofocus" id="userInput" />
+        <br/>
+        <input type="submit" style="visibility:hidden" hidefocus="true" />
     </form>
 
-    <div class="slideDiv" align="center">
-      Accent Color:<br>
-      <input class="jscolor {onFineChange:'update(this)'}" value="ffffff">
-    </div>
 
-    <form class="slideDiv" align="center">
-      Shortcuts:<br>
-      <input type="text" id="character_enter" placeholder="Add a character command" maxlength="2" /><br>
-      <input type="text" id="url_enter" placeholder="Add a url" /><br>
-      <input type="text" id="search_enter" placeholder="Add a search query url" /><br>
-      <input type="button" class="slideButton" onclick="javascript:store();" value="Set new Macro" />
-    </form>
+    <button id="hamburger" onclick="toggle();">&#9776; </button>
 
-    <div class="slideDiv" align="center">
-      Storage Options:<br>
-      <input type="button" class="slideButton" onclick="javascript:clearSites();" value="Clear All Macros" />
-      <input type="button" class="slideButton" onclick="clearStorage();" value="Clear All Storage"/>
-    </div>
+    <div id="toggleText" class="animated slideInLeft" style="display: none">
 
-    <form class="slideDiv" align="center">
-      Clear Macro:<br>
-      <input type="text" id="clear_one" placeholder="Clear shortcut at #" maxlength = "2" /><br>
-      <input type="button" class="slideButton" onclick="javascript:clearIndividual();" value="Clear" />
-    </form>
-
-    <div class="slideDiv" id="macroTABLE" align="center">
-      List of Macros:<br>
-      <table>
+        <div class="introText">
+            Welcome to
+            <mark class="red">StartPage</mark>. Use this site to quickly navigate external search queries. Access macros by typing "-" before the macro identifier.
+            <br>
+            <br> Example:
+            <mark class="yellow">-y hello</mark>
+            <br>
+            <br> This searches YouTube for hello.
+            <br>
+        </div>
 
         <script language="javascript" type="text/javascript">
-          updateMacroTable();
+            defaults();
         </script>
 
-      </table>
+        <form class="slideDiv" align="center">
+            Background URL:
+            <br>
+            <input type="text" id="bgchanger" placeholder="Background URL" />
+            <br>
+            <input type="button" class="slideButton" onclick="changebackground();" value="Change" />
+        </form>
+
+        <div class="slideDiv" align="center">
+            Accent Color:
+            <br>
+            <input class="jscolor {onFineChange:'update(this)'}" value="ffffff">
+        </div>
+
+        <form class="slideDiv" align="center">
+            Shortcuts:
+            <br>
+            <input type="text" id="character_enter" placeholder="Add a character command" maxlength="2" />
+            <br>
+            <input type="text" id="url_enter" placeholder="Add a url" />
+            <br>
+            <input type="text" id="search_enter" placeholder="Add a search query url" />
+            <br>
+            <input type="button" class="slideButton" onclick="javascript:store();" value="Set new Macro" />
+        </form>
+
+        <div class="slideDiv" align="center">
+            Storage Options:
+            <br>
+            <input type="button" class="slideButton" onclick="javascript:clearSites();" value="Clear All Macros" />
+            <input type="button" class="slideButton" onclick="clearStorage();" value="Clear All Storage" />
+        </div>
+
+        <form class="slideDiv" align="center">
+            Clear Macro:
+            <br>
+            <input type="text" id="clear_one" placeholder="Clear shortcut at #" maxlength="2" />
+            <br>
+            <input type="button" class="slideButton" onclick="javascript:clearIndividual();" value="Clear" />
+        </form>
+
+        <div class="slideDiv" id="macroTABLE" align="center">
+            List of Macros:
+            <br>
+            <table>
+
+                <script language="javascript" type="text/javascript">
+                    updateMacroTable();
+                </script>
+
+            </table>
+        </div>
+
     </div>
 
-  </div>
-
 </body>
+
 </html>
