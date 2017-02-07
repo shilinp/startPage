@@ -4,11 +4,12 @@
 <head>
     <link id="pagestyle" rel="stylesheet" type="text/css" href="Assets/style.css">
     <link rel="stylesheet" type="text/css" href="Assets/animate.css">
+
+    <script type="text/javascript" src="Assets/functional.js"></script>
+    <script src="Assets/jscolor.js"></script>
 </head>
 
 <body onload="loadBack(); startTime();">
-    <script type="text/javascript" src="Assets/functional.js"></script>
-    <script src="Assets/jscolor.js"></script>
 
     <form name="loginBox" id="oneForm" action="javascript:search();">
         <input type="text" name="input" autofocus="autofocus" id="userInput" />
@@ -16,6 +17,12 @@
         <input type="submit" style="visibility:hidden" hidefocus="true" />
     </form>
 
+    <!-- <div id="history">
+        </br>
+        <input id="checkbox" type="checkbox" onclick="historyrecord(checkbox);">Record History?</input>
+        <button onclick="historyfunc();">Show History</button>
+        <span id="historyBox"></span>
+    </div> -->
 
     <button id="hamburger" onclick="toggle();">&#9776; </button>
 
@@ -66,6 +73,7 @@
             Storage Options:
             <br>
             <input type="button" class="slideButton" onclick="javascript:clearSites();" value="Clear All Macros" />
+            <!-- <input type="button" class="slideButton" onclick="clearHistory();" value="Clear All History" /> -->
             <input type="button" class="slideButton" onclick="clearStorage();" value="Clear All Storage" />
         </div>
 
