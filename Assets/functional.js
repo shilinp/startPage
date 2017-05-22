@@ -83,7 +83,9 @@ function changebackground() {
 }
 
 function clearStorage() {
-    localStorage.clear();
+    localStorage.removeItem("backIMG");
+    localStorage.removeItem("arr");
+    localStorage.removeItem("accentSTR");
     location.reload(true);
     defaults();
 }
